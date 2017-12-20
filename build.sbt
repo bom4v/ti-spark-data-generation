@@ -14,7 +14,11 @@ libraryDependencies += "com.github.nscala-time" %% "nscala-time" % "2.16.0"
 
 libraryDependencies += "org.specs2" %% "specs2-core" % "3.9.4" % "test"
 
+libraryDependencies += "org.bom4v.ti" %% "ti-models-customers" % "0.0.1"
+
 libraryDependencies += "org.bom4v.ti" %% "ti-models-calls" % "0.0.1"
+
+libraryDependencies += "org.bom4v.ti" %% "ti-serializers-customers" % "0.0.1"
 
 libraryDependencies += "org.bom4v.ti" %% "ti-serializers-calls" % "0.0.1"
 
