@@ -1,9 +1,8 @@
 package org.bom4v.ti
 
 //
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.functions._
-import org.apache.spark.sql.types.DateType
+//import org.apache.spark.sql.SparkSession
+//import org.apache.spark.sql.functions._
 
 // Bom4V
 import org.bom4v.ti.models.customers.CustomerAccount.AccountModelForChurn
@@ -32,11 +31,13 @@ object Demonstrator extends App {
   import spark.implicits._
 
   // Read the raw data
-  val cdr_data_t : org.apache.spark.sql.DataFrame = spark.read
-    .option("header","true")
-    .option("inferSchema","true")
+  val cdr_data_t : org.apache.spark.sql.Dataset[CallEvent] = spark.read
+    .schema(callEventSchema)
+    .option("inferSchema", "false")
+    .option("header", "true")
     .option("delimiter", "^")
     .csv(cdrDataFilepath)
+    .as[CallEvent]
 
   //
   cdr_data_t.printSchema()
