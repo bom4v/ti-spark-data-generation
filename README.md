@@ -1,27 +1,24 @@
 Generation of Data Sets
 =======================
 
-# Build and deployment
-See http://github.com/bom4v/metamodels for the way to build, package and deploy
-all the Telecoms Intelligence (TI) Models components, including that project.
+# References
+* [This GitHub repository](https://github.com/bom4v/ti-spark-data-generation)
+  is a component of the [BOM4V project](https://github.com/bom4v/metamodels),
+  aiming at demonstrating end-to-end Spark-based examples
+  of Machine Learning (ML) pipelines, for instance
+  churn detection in telecoms and transport industries.
+* [Central Maven repository with BOM4V Jar artefacts](https://repo1.maven.org/maven2/org/bom4v/ti/)
+* [Docker cloud with ready-to-use images](https://cloud.docker.com/u/bigdatadevelopment/repository/docker/bigdatadevelopment/base)
 
-# Run the demonstrator
-```bash
-$ mkdir -p ~/dev/ti
-$ cd ~/dev/ti
-$ git clone https://github.com/bom4v/metamodels.git
-$ cd metamodels
-$ rake clone && rake checkout
-$ rake offline=true deliver
-$ cd workspace/src/ti-spark-data-generation
-$ ./fillLocalDataDir.sh
-$ sbt run
-[info] Loading global plugins from ~/.sbt/0.13/plugins
-[info] Loading project definition from ~/dev/ti/metamodels/workspace/src/ti-spark-data-generation/project
-[info] Set current project to ti-spark-data-generation (in build file:~/dev/ti/metamodels/workspace/src/ti-spark-generation/)
-[info] Compiling 1 Scala source to ~/dev/ti/metamodels/workspace/src/ti-spark-data-generation/target/scala-2.10/classes...
-[info] Running org.bom4v.ti.Demonstrator
+## Telecoms
+* Generation of CDR: https://github.com/RealImpactAnalytics/cdr-generator/tree/master/src/main/scala/Model
 
-[success] Total time: 2 s, completed Dec 14, 2017 6:04:35 PM
+# Installation
+
+## Short version
+Just add the dependency on `ti-spark-data-generation` in the SBT project
+configuration (typically, `build.sbt` in the project root directory):
+```scala
+libraryDependencies += "org.bom4v.ti" %% "ti-spark-data-generation" % "0.0.1-spark2.3"
 ```
 
