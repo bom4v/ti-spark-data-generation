@@ -64,7 +64,9 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.2.14" % "test",
   "com.github.mrpowers" %% "spark-fast-tests" % "1.3.0" % "test",
   "org.bom4v.ti" %% "ti-models-customers" % "0.0.1",
-  "org.bom4v.ti" %% "ti-models-calls" % "0.0.1"
+  "org.bom4v.ti" %% "ti-models-calls" % "0.0.1",
+  "org.bom4v.ti" %% "ti-serializers-customers" % "0.0.1",
+  "org.bom4v.ti" %% "ti-serializers-calls" % "0.0.1"
 )
 
 // Compilation options
